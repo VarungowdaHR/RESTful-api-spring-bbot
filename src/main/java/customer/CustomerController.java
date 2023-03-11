@@ -38,11 +38,7 @@ public class CustomerController {
             customer.setEmail(newCustomer.getEmail());
             return repo.save(customer);
         }).orElseGet(() ->{
-            Customer newCustomerWithId = new Customer();
-            newCustomerWithId.setId(id);
-            newCustomerWithId.setName(newCustomer.getName());
-            newCustomerWithId.setEmail(newCustomer.getEmail());
-            return repo.save(newCustomerWithId);
+            return repo.save(newCustomer);
         });
     }
 }
